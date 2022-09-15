@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="pt-BR">
+    <?php
+        $contatos = json_decode(file_get_contents('../../data/contatos.json'));
+    ?>
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Meus Contatos</title>
@@ -65,27 +67,19 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <th class="table-light">1</th>
-                            <td class="table-light text-center">Pedro</td>
-                            <td class="table-light text-center">18</td>
-                            <td class="table-light text-center">Masculino</td>
-                            <td class="table-light text-center">(68) 97911-3025</td>
-                        </tr>
-                        <tr>
-                            <th class="table-light" scope="row">2</th>
-                            <td class="table-light text-center">Marcela</td>
-                            <td class="table-light text-center">40</td>
-                            <td class="table-light text-center">Feminino</td>
-                            <td class="table-light text-center">(68) 97911-3025</td>
-                        </tr>
-                        <tr>
-                            <th class="table-light border-bottom-0 rounded-bottom-left" scope="row">3</th>
-                            <td class="table-light border-bottom-0 text-center">Jaedson</td>
-                            <td class="table-light border-bottom-0 text-center">19</td>
-                            <td class="table-light border-bottom-0 text-center">Masculino</td>
-                            <td class="table-light border-bottom-0 rounded-bottom-right text-center">(68) 97911-3025</td>
-                        </tr>
+                        <?php
+                            foreach ($contatos as $key => $contato) {
+                                ?>
+                                    <tr>
+                                        <th class="table-light"><?php echo $key ?></th>
+                                        <td class="table-light text-center"><?php echo $contato->nome ?></td>
+                                        <td class="table-light text-center"><?php echo $contato->idade ?></td>
+                                        <td class="table-light text-center"><?php echo $contato->sexo ?></td>
+                                        <td class="table-light text-center"><?php echo $contato->telefone ?></td>
+                                    </tr>
+                                <?php
+                            }
+                        ?>
                     </tbody>
 
                 </table>

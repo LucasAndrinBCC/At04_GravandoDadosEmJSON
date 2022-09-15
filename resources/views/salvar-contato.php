@@ -49,12 +49,12 @@
                     Lista de contatos
                 </h3>
 
-                <form action="../../Http/Controllers/AcaoController.php" method="get" class="mt-3" id="form">
+                <form action="../../Http/Controllers/SalvarContato.php" method="post" class="mt-3" id="form">
 
                     <div class="row g-2 mb-md-3 mb-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="text" class="form-control" name="username" id="nome" placeholder="Nome do contato">
+                                <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do contato">
                                 <label for="username">Nome</label>
                                 <div class="invalid-feedback">
                                     Informe um nome!
