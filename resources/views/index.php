@@ -68,16 +68,18 @@
 
                     <tbody>
                         <?php
-                            foreach ($contatos as $key => $contato) {
-                                ?>
-                                    <tr>
-                                        <th class="table-light"><?php echo $key ?></th>
-                                        <td class="table-light text-center"><?php echo $contato->nome ?></td>
-                                        <td class="table-light text-center"><?php echo $contato->idade ?></td>
-                                        <td class="table-light text-center"><?php echo $contato->sexo ?></td>
-                                        <td class="table-light text-center"><?php echo $contato->telefone ?></td>
-                                    </tr>
-                                <?php
+                            if ($contatos) {
+                                foreach ($contatos as $key => $contato) {
+                                    ?>
+                                        <tr>
+                                            <th class="table-light"><?php echo $key ?></th>
+                                            <td class="table-light text-center"><?php echo $contato->nome ?></td>
+                                            <td class="table-light text-center"><?php echo $contato->idade ?></td>
+                                            <td class="table-light text-center"><?php echo $contato->sexo ?></td>
+                                            <td class="table-light text-center"><?php echo $contato->telefone ?></td>
+                                        </tr>
+                                    <?php
+                                }
                             }
                         ?>
                     </tbody>
