@@ -49,19 +49,25 @@
                     Lista de contatos
                 </h3>
 
-                <form action="../../Http/Controllers/AcaoController.php" method="get" class="mt-3">
+                <form action="../../Http/Controllers/AcaoController.php" method="get" class="mt-3" id="form">
 
-                    <div class="row g-2 mb-3">
+                    <div class="row g-2 mb-md-3 mb-2">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="text" class="form-control" name="username" id="username" placeholder="Nome do contato">
+                                <input type="text" class="form-control" name="username" id="nome" placeholder="Nome do contato">
                                 <label for="username">Nome</label>
+                                <div class="invalid-feedback">
+                                    Informe um nome!
+                                </div>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
                                 <input type="number" class="form-control" name="idade" id="idade" placeholder="Idade do contato">
                                 <label for="idade">Idade</label>
+                                <div class="invalid-feedback">
+                                    Informe uma idade!
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -71,6 +77,9 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" name="telefone" id="telefone" placeholder="Telefone do contato">
                                 <label for="telefone">Telefone</label>
+                                <div class="invalid-feedback">
+                                    Informe um telefone!
+                                </div>
                             </div>
                         </div>
 
@@ -91,20 +100,17 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-indigo">Salvar</button>
+                    <button type="buttom" class="btn btn-indigo">Salvar</button>
 
                 </form>
 
             </div>
 
-            
-
         </div>
 
-        
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+        <!-- Script de validação -->
+        <script src="../inc/js/validation.js"></script>
     </body>
 </html>
